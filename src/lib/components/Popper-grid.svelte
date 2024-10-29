@@ -2,8 +2,7 @@
     import { onMount } from "svelte";
     import { fade } from "svelte/transition"
     import PopperButtons from "./Popper-buttons.svelte";
-    import { firstReset } from "../button-generation";
-    import { activeCircles } from "../button-generation";
+    import { firstReset, activeCircles } from "../button-generation";
 
     // Executed when the component is fully loaded
     onMount(() => {

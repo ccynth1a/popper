@@ -1,4 +1,4 @@
-export async function updateScore(username: string, score: number) {
+export async function updateScores(username: string, score: number) {
     const response = await fetch('/api/highscore', {
         method: "POST",
         body: JSON.stringify({
@@ -11,12 +11,11 @@ export async function updateScore(username: string, score: number) {
     });
     
     
-    parsed = await response.json();
-    highScore = parse.highscore;
-    return highScore;
+    let scores = await response.json();
+    return scores;
 }
 
-export async function fetchScore() {
+export async function fetchScores() {
     const response = await fetch('/api/highscore', {
         method: 'GET',
         headers: {
@@ -24,7 +23,7 @@ export async function fetchScore() {
         }
     });
 
-    let highScore = await response.json();
-    return highScore;
+    let scores = await response.json();
+    return scores;
 }
 

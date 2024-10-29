@@ -1,9 +1,9 @@
 <script>
-    import Highscore from "../lib/components/Highscore.svelte";
+    import Leaderboard from "../lib/components/Leaderboard.svelte";
     import Popper from "../lib/components/Popper-grid.svelte";
 </script>
 
 <main>
     <Popper />
-    <Highscore />
+    <Leaderboard />
 </main>

@@ -37,12 +37,5 @@ export async function POST(event) {
 
     scores.push(user, score);
 
-    // check if user is new, if so make an entry for them
-    //if (users.some(current => {
-    //    return current.username = user;
-    //})) {
-    //    let newUser: User = { user, score };
-    //    users.push(newUser);
-    //}
     return json(sortScores())
 }
