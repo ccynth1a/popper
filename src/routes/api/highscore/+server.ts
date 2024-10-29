@@ -1,17 +1,48 @@
 import { json } from "@sveltejs/kit"
+type ScoreListing = {
+    username: string;
+    score: number;
+}
 
-let highscore: number = 0;
+let scores: ScoreListing[] = [
+    {
+        username: "Tim",
+        score: 3,
+    },
+    {
+        username: "Sam",
+        score: 13142,
+    },
+    {
+        username: "Jane",
+        score: 12,
+    }
+]
+
+const sortScores = function() {
+    return scores.sort((a,b) => a.score - b.score).slice(0,11);
+    
+}
 
 export async function GET() {
-     return json(highscore)
+     return json(sortScores())
 }
 
 export async function POST(event) {
     const { user, score } = await event.request.json()
 
-    if (score > highscore) {
-        highscore = score
+    if (score > scores[0]) {
+        scores[0] = score;
     }
 
-    return json(highscore)
+    scores.push(user, score);
+
+    // check if user is new, if so make an entry for them
+    //if (users.some(current => {
+    //    return current.username = user;
+    //})) {
+    //    let newUser: User = { user, score };
+    //    users.push(newUser);
+    //}
+    return json(sortScores())
 }
