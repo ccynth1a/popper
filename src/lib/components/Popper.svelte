@@ -1,8 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { fade } from "svelte/transition"
-    import { scoreStore } from "../../scoreStore"
 
+    // Ending Card Messages
     let messages: string[] = [
         "So Close!",
         "Anvil.",
@@ -10,11 +10,14 @@
     ];
     let message: string = "";
 
+    // Last Clicked Circle + Array of values pertaining to status of said circles
     let clickedCircle = null;
     let clickedCircles: boolean[] = Array(20).fill(false)
 
+    // Currently active circles
     let activeCircles: boolean[] = Array(20).fill(false); // all circles are set to be inactive
 
+    // Timing
     let start = Date.now();
     let end = Date.now();
     let elapsed;
@@ -31,13 +34,13 @@
         if (arrayComparison(clickedCircles, activeCircles)) {
             end = Date.now()
             elapsed = end - start;
-            scoreStore.addScore(elapsed);
-            console.log(elapsed);
+            console.log(elapsed); // Log time
             console.log("You Win!")
             triggerReset();
         }
     }
 
+    // Compare two arrays
     const arrayComparison = function(array1: any[], array2: any[]) {
         if (array1.length == array2.length) {
             return array1.every( (item, index) => {
@@ -52,6 +55,7 @@
         }
     }
 
+    // Self explanatory
     const setRandomCircles = function() {
         // Start By Setting The Array to False
         activeCircles = Array(20).fill(false);
@@ -64,10 +68,11 @@
         }
         
         randomCircles.forEach( (index) => {
-            activeCircles[index] = true;
+            activeCircles[index] = true; // update the active circles array to have the correct ones
         })
     }
-    
+   
+    // Display the red screen (currently only on-fail implemented) with optional custom message
     const displayScreen = function(customMsg: any = undefined) {
         showScreen=true;
         if (customMsg == undefined) {
@@ -77,6 +82,7 @@
         }
     }
 
+    // Reset the lgoic and begin a new game
     const triggerReset = function() {
         displayScreen();
         setTimeout(() => {
@@ -96,6 +102,8 @@
         setRandomCircles();
         start = Date.now()
     }
+    
+    // Executed when the component is fully loaded
     onMount(() => {
         displayScreen("Welcome To Popper!");
         firstReset();
