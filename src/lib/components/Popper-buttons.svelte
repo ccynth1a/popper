@@ -3,13 +3,13 @@
     // import PopperGrid, { handleClick } from "./Popper-grid.svelte";
     import { handleClick } from "../button-generation";
 
-    export let button_id;
-    export let isActive;
+    let { isActive, button_id } = $props()
+
 </script>
 
 <button class="circle {isActive ? 'active' : ''}" onclick={ () => handleClick(button_id)}>
     <!-- on:click={() => handleClick(button_id)} -->
-    {button_id}
+    <!-- {button_id} -->
 </button>
 
 <style>

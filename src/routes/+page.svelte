@@ -1,9 +1,7 @@
 <script>
-    import Leaderboard from "../lib/components/Leaderboard.svelte";
-    import Popper from "../lib/components/Popper-grid.svelte";
+    import Componenetnavigatorbar from "$lib/components/Componenetnavigatorbar.svelte";
 </script>
 
 <main>
-    <Popper />
-    <Leaderboard />
+    <Componenetnavigatorbar />
 </main>

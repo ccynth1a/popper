@@ -2,13 +2,23 @@
     import { onMount } from "svelte";
     import { fade } from "svelte/transition"
     import PopperButtons from "./Popper-buttons.svelte";
-    import { firstReset, activeCircles } from "../button-generation";
+    import { firstReset, randomCircles} from "../button-generation";
+
+
+    export let activeCircles: boolean[] = Array(20).fill(false); 
+    // assign the entry with the id in random circles to true - the final stage of the genration aka applying the randomness
+    randomCircles.forEach(
+        (array_position) => { // this without a doubt (probably) works, dont check it again probably
+            activeCircles[array_position] = true; // update the active circles array to have the correct ones
+        }
+    )
 
     // Executed when the component is fully loaded
     onMount(() => {
         // displayScreen("Welcome To Popper!");
         firstReset();
     })
+    
 </script>
 
 
