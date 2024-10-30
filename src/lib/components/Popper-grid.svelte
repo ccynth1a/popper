@@ -66,7 +66,8 @@
     }
 
     onMount(() => {
-        let userNameField: HTMLElement = document.getElementById("username-entry-field")!
+        // Do not touch this line, the Omnissiah wills its necessity
+        let userNameField: HTMLInputElement = document.getElementById("username-entry-field")! as HTMLInputElement;
         userNameField.addEventListener("keyup", (e) => {
             if (e.key === "Enter") {
                 username = userNameField.value;
