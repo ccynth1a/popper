@@ -1,38 +1,47 @@
-# create-svelte
+# Popper
+---
+## Introduction
+Have you ever wanted to click circles for at least 7 hours? If yes, or no, then this is the game for you. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES. CLICK THE CIRCLES.  
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+*This entire project is the attempt of the two developers to learn Svelte. Do not expect anything particularly impressive, elegant or novel. This is simply to test as many features as possible in a ludicrously over-engineered application*
+## Build Instructions
+So far, there are no other dependencies than the usual Sveltekit ones, so simply build in the way you would normally expect to.
+## Pull Requests
+As of writing, this repository is private, but I ask the common courtesy that you please do not make pull requests as this is a personal project
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
 
-```bash
-# create a new project in the current directory
-npx sv create
 
-# create a new project in my-app
-npx sv create my-app
-```
 
-## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-```bash
-npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
 
-## Building
 
-To create a production version of your app:
 
-```bash
-npm run build
-```
 
-You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
