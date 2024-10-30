@@ -104,8 +104,7 @@
         grid-template-columns: repeat(4, auto); /* 5 columns */
         gap: 10px; 
         column-gap: 20px;
-        padding: 20px;
-    
+        padding: 20px; /* padding between circles and edge */
     }
     .circle {
         width: 150px; 

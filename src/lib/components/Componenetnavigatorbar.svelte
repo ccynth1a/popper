@@ -2,24 +2,32 @@
     import PopperGrid from "./Popper-grid.svelte";
     import Leaderboard from "./Leaderboard.svelte";
 
-    let page = $state(0)
-    const pageChanger = function(page_req: number) {
-        page = page_req
-    }
+    let activepage = $state(0)
+
+    let activetab = $state([
+        {
+            label : "Popper",
+            id : 0
+        },
+        {
+            label : "Leaderboard",
+            id : 1
+        }
+    ]) 
 
 </script>
 
 <div class="componentloader">
     <div class="nav">
-        <button class = "navbutton" onclick={ () => page = 0}>
+        <button class = "navbutton" onclick={ () => {activepage = 0}}>
             Popper
         </button>
-        <button class = "navbutton" onclick={ () => page = 1}>
+        <button class = "navbutton" onclick={ () => activepage = 1}>
             Leaderboard
         </button>
     </div>
     <div class="container">
-        {#if page == 0}
+        {#if activepage == 0}
             <PopperGrid/>
         {:else}
             <Leaderboard/>
@@ -29,25 +37,40 @@
 
 <style>
     .componentloader {
-        background-color: rgb(122, 39, 39);
+        background-color: rgb(120, 40, 40);
         max-width: 800px;
-        border-radius: 1%;
+        border-radius: 15px;
+        padding-bottom: 10px;
     }
     .nav{
-        background-color: rgb(52, 128, 163);
+        background-color: rgb(100, 40, 40);
         border-radius: 1%;
-        border-width: 50px;
-        border-color: aqua;
         height: fit-content;
-        flex-direction: column;
+        flex-direction: row;
+        border-radius: 15px 15px 0px 0px;
+        padding-left: 5px;
+        padding-top: 5px;
+        border-color: white;
+        border-bottom: 5px;
     }
     .navbutton{
-        border: none;
+        color: wheat;
+        background-color: rgb(100, 40, 40);
+        /* border: none; */
+        border-color: wheat;
+        border-style: solid;
+        border-bottom: none;
         height: 33px;
         width: 25%;
-        margin-top: 5px;
-        margin-left: 5px;
-        border-radius: 10px 10px 0px 0px;
+        border-radius: 15px 15px 0px 0px;
+    }
+    .navbutton:hover{
+        color: wheat;
+        background-color: rgb(120, 40, 40);
+        border-color: white;
+        height: 33px;
+        width: 25%;
+        border-radius: 15px 15px 0px 0px;
     }
     .container{
         margin-top: 20px;
