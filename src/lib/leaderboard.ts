@@ -1,4 +1,6 @@
 export async function updateScores(username: string, score: number) {
+    console.log(username)
+    console.log(score)
     const response = await fetch('/api/highscore', {
         method: "POST",
         body: JSON.stringify({

@@ -31,7 +31,7 @@ export async function GET() {
 export async function POST(event) {
     const { user, score } = await event.request.json()
 
-    scores.push(user, score);
+    scores.push({username: user, score: score});
 
     return json(sortScores())
 }

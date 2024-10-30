@@ -16,6 +16,11 @@
             console.log("Input Detected")
             username = usernamefield!.value!;
         });
+
+        // Update Leaderboard Periodically
+        setInterval(() => fetchScores().then(fetchedScores => {
+            scores = fetchedScores;
+        }), 1000);
     });     
 </script>
 
