@@ -1,56 +1,81 @@
+<!--DESCRIPTION: Monolithic Game Component-->
+
 <script lang="ts">
-    import { onMount } from "svelte";
-    import { fade } from "svelte/transition"
-    import PopperButtons from "./Popper-buttons.svelte";
-    import { firstReset, randomCircles} from "../button-generation";
+    import type { Button } from "../types";
+    import { onMount } from "svelte"
 
+    // Button defined in ../types.ts
+    let buttons: Button[] = $state([]);
 
-    export let activeCircles: boolean[] = Array(20).fill(false); 
-    // assign the entry with the id in random circles to true - the final stage of the genration aka applying the randomness
-    randomCircles.forEach(
-        (array_position) => { // this without a doubt (probably) works, dont check it again probably
-            activeCircles[array_position] = true; // update the active circles array to have the correct ones
+    let start = Date.now();
+    let end: number;
+    let elapsed: number;
+   
+    // Fill all buttons with false
+    const createButtons = function() {
+        for (let i = 0; i < 20; i++) {
+            buttons[i] = {
+                id: i,
+                active: false,
+            }
         }
-    )
+    }
 
-    // Executed when the component is fully loaded
+    // When a button is clicked, either make it dissappear, or reset the game. Win condition on no buttons left
+    const handleClick = function(id: number) {
+        console.log(id)
+        if (buttons[id].active) {
+            buttons[id].active = false;  
+
+            // Check win condition
+            if (!(buttons.some(button => {
+                return button.active
+            }))) {
+                triggerReset(true) 
+            }
+        } else {
+            triggerReset(false);
+        }
+    }
+
+    const generateRandomCircles = function() {
+        let randomCircles = new Set<number>();
+        
+        while (randomCircles.size <= 7) {
+            randomCircles.add(Math.floor(Math.random() * 20));
+        }
+
+        // Random Circles have been generated, now update numbers array
+        for (const circle of randomCircles) {
+            buttons[circle].active = true;
+        }
+    }
+
+    const triggerReset = function(win: boolean) {
+        if (win) {
+            end = Date.now()
+            elapsed = end - start;
+        }
+        buttons.forEach(button => button.active = false);
+        generateRandomCircles()
+    }
+
     onMount(() => {
-        // displayScreen("Welcome To Popper!");
-        firstReset();
+        start = Date.now()
+        createButtons();
+        generateRandomCircles()
     })
-    
 </script>
 
-
-<div class="grid">
-    {#each activeCircles as isActive, id}
-        <PopperButtons {isActive} button_id={id} > 
-        </PopperButtons>
+<main>
+<div class=grid>
+    {#each buttons as button}
+        <input type="button" class="circle {button.active ? "active" : ""}" onclick={() => handleClick(button.id)} />
     {/each}
-
-    <!-- {#if showScreen}
-    <div class="overlay-screen" transition:fade>
-            <p>{message}</p>
-        </div>  
-        {/if} -->
 </div>
-        
-<style>
-    /* .overlay-screen {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: red;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2em;
-        z-index: 10;
-    } */
+</main>
 
+<style>
     .grid {
         display: grid;
         height: 100%;
@@ -64,6 +89,23 @@
         gap: 10px; 
         column-gap: 20px;
         padding: 20px;
+    
     }
-        
+    .circle {
+        width: 150px; 
+        height: 150px;
+        border-radius: 50%; /* makes it a circle */
+        background-color: rgb(40, 40, 40); /* circle color */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+        border: none;
+        color: wheat;
+    }
+
+    .circle.active {
+        transform: scale(0.95); 
+        background-color: rgb(200, 0, 0);
+    }
 </style>
