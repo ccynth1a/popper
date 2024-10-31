@@ -1,6 +1,7 @@
 <script lang="ts">
     import PopperGrid from "./Popper-grid.svelte";
     import Leaderboard from "./Leaderboard.svelte";
+    import Settings from "./Settings.svelte";
 
     let activepage = $state(0)
 
@@ -19,6 +20,10 @@
 
 <div class="componentloader">
     <div class="nav">
+        <!-- {#each  as } -->
+            
+        <!-- {/each} -->
+
         <button class = "navbutton" onclick={ () => {activepage = 0}}>
             Popper
         </button>
@@ -29,8 +34,10 @@
     <div class="container">
         {#if activepage == 0}
             <PopperGrid/>
-        {:else}
+        {:else if activepage == 1}
             <Leaderboard/>
+        {:else if activepage == 2}
+            <Settings/>
         {/if}
     </div>
 </div>

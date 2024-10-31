@@ -32,6 +32,7 @@
     {/each}
 </main>
 
+
 <style>
     /*main {
         background-color: rgb(20,20,20);
@@ -42,13 +43,19 @@
 
 
     main {
-        width: 30%;
+        color: wheat;
+        display: grid;
+        height: 100%;
+        /* you dont use pixels for width :sob: */
+        width: 700px; 
         border-radius: 20px;
-        box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-        background-color: #ffffff;
-        padding: 20px;
-        margin: 15px;
-        cursor: pointer;
+        background-color: rgb(20, 20, 20);
+        margin: auto;
+        justify-content: center;
+        /* grid-template-columns: repeat(4, auto); 5 columns */
+        gap: 10px; 
+        column-gap: 20px;
+        padding: 20px; /* padding between circles and edge */
     }
 
 </style>
