@@ -47,6 +47,7 @@
         display: grid;
         height: 100%;
         /* you dont use pixels for width :sob: */
+        /* width: 700px;  */
         width: 700px; 
         border-radius: 20px;
         background-color: rgb(20, 20, 20);

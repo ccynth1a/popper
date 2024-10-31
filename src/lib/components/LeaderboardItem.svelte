@@ -3,21 +3,21 @@
     export let score;
 
 
-    let colors: string[] = ["red", "green", "blue", "yellow"];
-    let color = colors[position%5];
+    // let colors: string[] = ["red", "green", "blue", "yellow"];
+    // let color = colors[position%5];
 </script>
-
+<!-- style="background-color: {color}" -->
 <main>
-    <div class="container" style="background-color: {color}">
+    <div class="container" >
         <p>{position+1}: {score.username} {score.score}</p>
     </div> 
 </main>
 
 <style>
     main {
-        margin-bottom: 10px;
-        font-size: large;
-        border-radius: 10px;
+        background-color: rgb(40, 40, 40);
+        font-size: medium;
+        border-radius: 15px;
     }
     
 </style>

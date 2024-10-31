@@ -13,6 +13,10 @@
         {
             label : "Leaderboard",
             id : 1
+        },
+        {
+            label : "Settings",
+            id : 2
         }
     ]) 
 
@@ -20,16 +24,11 @@
 
 <div class="componentloader">
     <div class="nav">
-        <!-- {#each  as } -->
-            
-        <!-- {/each} -->
-
-        <button class = "navbutton" onclick={ () => {activepage = 0}}>
-            Popper
-        </button>
-        <button class = "navbutton" onclick={ () => activepage = 1}>
-            Leaderboard
-        </button>
+        {#each activetab as tab (tab.id) }
+            <button class = "navbutton" onclick={ () => {activepage = tab.id}}>
+                {tab.label}
+            </button>            
+        {/each}
     </div>
     <div class="container">
         {#if activepage == 0}
