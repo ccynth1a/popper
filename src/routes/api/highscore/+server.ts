@@ -6,21 +6,45 @@ type ScoreListing = {
 
 let scores: ScoreListing[] = [
     {
-        username: "Tim",
-        score: 3,
+        username: "Ophiuhcus",
+        score: 901,
+    },
+    {
+        username: "CClestial",
+        score: 954,
+    },
+    {
+        username: "P1NIT",
+        score: 1031,
+    },
+    {
+        username: "willow",
+        score: 1281,
+    },
+    {
+        username: "Scarlet",
+        score: 5744,
+    },
+    {
+        username: "Crime-Person",
+        score: 5142,
+    },
+    {
+        username: "Skye",
+        score: 6331,
     },
     {
         username: "Sam",
-        score: 13142,
+        score: 5142,
     },
     {
-        username: "Jane",
-        score: 12,
+        username: "Kamel",
+        score: 7712,
     }
 ]
 
 const sortScores = function() {
-    return scores.sort((a,b) => a.score - b.score).slice(0,11);
+    return scores.sort((a,b) => a.score - b.score).slice(0,9);
     
 }
 

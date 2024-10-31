@@ -47,6 +47,7 @@
         max-width: 800px;
         border-radius: 15px;
         padding-bottom: 10px;
+        height: 100%;
     }
     .nav{
         background-color: rgb(100, 40, 40);
@@ -81,5 +82,6 @@
     .container{
         margin-top: 20px;
         margin-bottom: 20px;
+        height: 100%;
     }
 </style>

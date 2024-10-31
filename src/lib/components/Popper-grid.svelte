@@ -74,6 +74,8 @@
                 userNameEntered = true;
             }
         })
+        username = "crime-girl" // REMOVE THIS LINE
+        userNameEntered = true; // REMOVE THIS LINE
         start = Date.now()
         createButtons();
         generateRandomCircles()

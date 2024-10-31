@@ -26,7 +26,7 @@
 
 <main>
     <LeaderboardHeader />
-    <input id="username-field" type="text">
+    <!-- <input id="username-field" type="text"> -->
     {#each scores as score, position}
         <LeaderboardItem {position} {score} />
     {/each}
