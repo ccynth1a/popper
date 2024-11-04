@@ -1,0 +1,174 @@
+.theme-default {
+    --color1: #1446A0;
+    --color2: #DB3069;
+    --color3: #F5D547;
+    --color4: #EBEBD3;
+    --color5: #3C3C3B;
+    --color6: #2c2c2c;
+    --color7: #141414;
+}
+.componentloader {
+    background-color: var(--color5);
+    max-width: 800px;
+    border-radius: 15px;
+    padding-bottom: 10px;
+    height: 100%;
+}
+
+.nav{
+    background-color: var(--color1);
+    border-radius: 1%;
+    height: fit-content;
+    flex-direction: row;
+    border-radius: 15px 15px 0px 0px;
+    padding-left: 5px;
+    padding-top: 5px;
+    /* border-color: white; */
+    border-bottom: 5px;
+}
+.navbutton{
+    color: var(--color3);
+    background-color: var(--color6);
+    /* border: none; */
+    border-color: wheat;
+    border-style: solid;
+    border-bottom: none;
+    height: 33px;
+    width: 25%;
+    border-radius: 15px 15px 0px 0px;
+}
+.navbutton:hover{
+    color: wheat;
+    background-color: var(--color5);
+    border-color: white;
+    height: 33px;
+    width: 25%;
+    border-radius: 15px 15px 0px 0px;
+}
+.container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 700px;
+}
+.active{
+    color: wheat;
+    background-color: var(--color5);
+    border-color: white;
+    height: 33px;
+    width: 25%;
+    border-radius: 15px 15px 0px 0px;
+}
+.grid {
+    display: grid;
+    height: 100%;
+    /* you dont use pixels for width :sob: */
+    width: 700px; 
+    border-radius: 20px;
+    background-color: var(--color7);
+    margin: auto;
+    justify-content: center;
+    grid-template-columns: repeat(4, 18%); /* 5 columns */
+    gap: 10px; 
+    overflow: auto;
+    column-gap: 20px;
+    padding: 20px; /* padding between circles and edge */
+}
+.circle {
+    width: 100%; 
+    height: 100%;
+    border-radius: 50%; /* makes it a circle */
+    background-color: var(--color5); /* circle color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.circle.active {
+    transform: scale(0.95); 
+    background-color: #DB3069;
+}
+.container{
+    display: flex;
+}
+#container-left{
+    width: 89%;
+    display: flex;
+    justify-content: left;
+}
+#container-right{
+    width: 10%;
+    display: flex;
+    justify-content: right;
+}
+#position{
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: var(--color2);
+    border-radius: 5px;
+    font-size: large;
+    text-align: left;
+}
+#username{
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: var(--color2);
+    border-radius: 5px;
+    padding-left: 5px;
+    text-align: left;
+}
+#score{
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: var(--color2);
+    border-radius: 5px;
+    padding-right: 5px;
+}
+.leaderboarditem {
+    background-color: var(--color5);
+    font-size: medium;
+    font: Arial;
+    border-radius: 15px;
+    height: 50%;
+    color: var(--color3);
+}
+.leaderboard {
+    color: wheat;
+    display: grid;
+    height: 95%;
+    /* you dont use pixels for width :sob: */
+    width: 700px; 
+    border-radius: 20px;
+    background-color: var(--color6);
+    margin: auto;
+    justify-content: center;
+    /* grid-template-columns: repeat(4, auto); 5 columns */
+    gap: 10px; 
+    column-gap: 20px;
+    padding: 20px; /* padding between circles and edge */
+}
+.settings {
+    color: var(--color3);
+    display: grid;
+    height: 95%;
+    /* you dont use pixels for width :sob: */
+    width: 700px; 
+    border-radius: 20px;
+    background-color: var(--color6);
+    margin: auto;
+    justify-content: center;
+    /* grid-template-columns: repeat(4, auto); 5 columns */
+    gap: 10px; 
+    column-gap: 20px;
+    padding: 20px; /* padding between circles and edge */
+}
+.popper-grid {
+    height: 95%;
+}
+.header-div {
+    margin: auto;
+    text-align: center;
+}
