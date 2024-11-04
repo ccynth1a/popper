@@ -20,6 +20,7 @@
     let { username, settings }: {username: string, settings: Settings_t} = $props()
 
     let inGame: boolean = $state(false);
+    let first: boolean = $state(true);
     let counter = $state(3);
 
     // Button defined in ../types.ts
@@ -99,6 +100,7 @@
         generateRandomCircles();
         sleep(1000).then(() => {counter--; sleep(1000).then(() => {counter--; sleep(1000).then(() => {counter--; inGame = true})})});
         start = Date.now()
+        first = false;
     })
 </script>
 
@@ -112,8 +114,8 @@
     {:else}
         <div class="countdown">
             <h1 class="counter">{counter}</h1>
-            <p class="counter">{msg}</p>
-            <p class="counter">{formatTime(elapsed)}</p>
+            <p class="counter">{first ? msg : "Welcome To Popper"}</p>
+            <p class="counter">{first ? formatTime(elapsed) : ""}</p>
         </div> 
     {/if}
 </main>
