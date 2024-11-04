@@ -114,7 +114,7 @@
     {:else}
         <div class="countdown">
             <h1 id="counter">{counter}</h1>
-            <p id="motr">{first ? msg : "Welcome To Popper"}</p>
+            <p id="motr">{first ? "Welcome To Popper" : msg}</p>
             <p id="elapsed">{first ? formatTime(elapsed) : ""}</p>
         </div> 
     {/if}
