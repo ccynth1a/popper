@@ -109,6 +109,6 @@
 
     .circle.active {
         transform: scale(0.95); 
-        background-color: rgb(200, 0, 0);
+        background-color: #DB3069;
     }
 </style>

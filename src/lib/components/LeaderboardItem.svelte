@@ -5,7 +5,7 @@
     // let color = colors[position%5];
 </script>
 <!-- style="background-color: {color}" -->
-<main>
+<main class="theme-default">
     <div class="container" >
         <div id="container-left">
             <div id="position">
@@ -25,11 +25,11 @@
 
 <style>
     main {
-        background-color: rgb(40, 40, 40);
+        background-color: var(--color1);
         font-size: medium;
         font: Arial;
         border-radius: 15px;
-        /* width: 500px; */
+        height: 50%;
     }
     .container{
         display: flex;
@@ -47,7 +47,7 @@
     #position{
         padding-left: 5px;
         padding-right: 5px;
-        background-color: grey;
+        background-color: var(--color2);
         border-radius: 5px;
         font-size: large;
         text-align: left;
@@ -56,7 +56,7 @@
         margin-left: 5px;
         padding-left: 5px;
         padding-right: 5px;
-        background-color: grey;
+        background-color: var(--color3);
         border-radius: 5px;
         padding-left: 5px;
         text-align: left;
@@ -65,7 +65,7 @@
         margin-left: 5px;
         padding-left: 5px;
         padding-right: 5px;
-        background-color: grey;
+        background-color: var(--color1);
         border-radius: 5px;
         padding-right: 5px;
     }

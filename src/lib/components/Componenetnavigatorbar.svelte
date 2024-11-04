@@ -37,7 +37,7 @@
 
 </script>
 
-<div class="componentloader">
+<div class="componentloader theme-default">
     <div class="nav">
         {#each activetab as tab (tab.id) }
             <button class = "navbutton" onclick={ () => {activepage = tab.id}}>
@@ -61,27 +61,34 @@
 </div>
 
 <style>
+    .theme-default {
+        --color1: #1446A0;
+        --color2: #DB3069;
+        --color3: #F5D547;
+        --color4: #EBEBD3;
+        --color5: #3C3C3B;
+    }
     .componentloader {
-        background-color: rgb(120, 40, 40);
+        background-color: var(--color5);
         max-width: 800px;
         border-radius: 15px;
         padding-bottom: 10px;
         height: 100%;
     }
     .nav{
-        background-color: rgb(100, 40, 40);
+        background-color: var(--color1);
         border-radius: 1%;
         height: fit-content;
         flex-direction: row;
         border-radius: 15px 15px 0px 0px;
         padding-left: 5px;
         padding-top: 5px;
-        border-color: white;
+        /* border-color: white; */
         border-bottom: 5px;
     }
     .navbutton{
         color: wheat;
-        background-color: rgb(100, 40, 40);
+        background-color: var(--color5);
         /* border: none; */
         border-color: wheat;
         border-style: solid;
@@ -92,7 +99,7 @@
     }
     .navbutton:hover{
         color: wheat;
-        background-color: rgb(120, 40, 40);
+        background-color: var(--color5);
         border-color: white;
         height: 33px;
         width: 25%;

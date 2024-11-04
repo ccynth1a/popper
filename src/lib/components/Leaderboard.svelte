@@ -45,12 +45,11 @@
     main {
         color: wheat;
         display: grid;
-        height: 100%;
+        height: 700px;
         /* you dont use pixels for width :sob: */
-        /* width: 700px;  */
         width: 700px; 
         border-radius: 20px;
-        background-color: rgb(20, 20, 20);
+        background-color: #5A639C;
         margin: auto;
         justify-content: center;
         /* grid-template-columns: repeat(4, auto); 5 columns */
