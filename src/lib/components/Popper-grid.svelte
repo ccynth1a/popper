@@ -71,40 +71,54 @@
     })
 </script>
 
-<main>
-<div class=grid>
-    {#each buttons as button}
-        <input type="button" class="circle {button.active ? "active" : ""}" onclick={() => handleClick(button.id)} />
-    {/each}
-</div>
+<main class="theme-default">
+    <div class=grid>
+        {#each buttons as button}
+            <input type="button" class="circle {button.active ? "active" : ""}" onclick={() => handleClick(button.id)} />
+        {/each}
+    </div>
 </main>
 
 <style>
+    .theme-default {
+        --color1: #1446A0;
+        --color2: #DB3069;
+        --color3: #F5D547;
+        --color4: #EBEBD3;
+        --color5: #3C3C3B;
+        --color6: #2c2c2c;
+        --color7: #141414;
+    }
+
+    main {
+        height: 95%;
+    }
+
     .grid {
         display: grid;
         height: 100%;
         /* you dont use pixels for width :sob: */
         width: 700px; 
         border-radius: 20px;
-        background-color: rgb(20, 20, 20);
+        background-color: var(--color7);
         margin: auto;
         justify-content: center;
-        grid-template-columns: repeat(4, auto); /* 5 columns */
+        grid-template-columns: repeat(4, 18%); /* 5 columns */
         gap: 10px; 
+        overflow: auto;
         column-gap: 20px;
         padding: 20px; /* padding between circles and edge */
     }
     .circle {
-        width: 150px; 
-        height: 150px;
+        width: 100%; 
+        height: 100%;
         border-radius: 50%; /* makes it a circle */
-        background-color: rgb(40, 40, 40); /* circle color */
+        background-color: var(--color5); /* circle color */
         display: flex;
         align-items: center;
         justify-content: center;
         transition: background-color 0.3s;
         border: none;
-        color: wheat;
     }
 
     .circle.active {
