@@ -33,11 +33,13 @@
                 userNameEntered = true;
             }
         })
+        username = "no"
+        userNameEntered = true;
     });
 
 </script>
 
-<main class="theme-default">
+<main class="theme-default popper-main-style">
     <div class="componentloader">
         <div class="nav">
             {#each activetab as tab (tab.id) }

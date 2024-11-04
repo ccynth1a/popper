@@ -2,11 +2,19 @@
     --color1: #1446A0;
     --color2: #DB3069;
     --color3: #F5D547;
+    --color8: #f5deb3;
     --color4: #EBEBD3;
     --color5: #3C3C3B;
     --color6: #2c2c2c;
     --color7: #141414;
 }
+/* default stuffs */
+.popper-main-style {
+/* main { */
+    color: var(--color3);
+    /* background-color: var(--color5); */
+}
+/* Componenet Navigator Bar */
 .componentloader {
     background-color: var(--color5);
     max-width: 800px;
@@ -14,7 +22,6 @@
     padding-bottom: 10px;
     height: 100%;
 }
-
 .nav{
     background-color: var(--color1);
     border-radius: 1%;
@@ -38,31 +45,34 @@
     border-radius: 15px 15px 0px 0px;
 }
 .navbutton:hover{
-    color: wheat;
     background-color: var(--color5);
-    border-color: white;
     height: 33px;
     width: 25%;
     border-radius: 15px 15px 0px 0px;
 }
 .container{
+    /* centre the grid and anything else inside this container */
+    justify-content: center; 
     margin-top: 20px;
     margin-bottom: 20px;
-    height: 700px;
+    /* height: 700px; */
 }
 .active{
-    color: wheat;
     background-color: var(--color5);
-    border-color: white;
     height: 33px;
     width: 25%;
     border-radius: 15px 15px 0px 0px;
 }
+
+/* Popper - grid svelte */
+.popper-grid {
+    height: 100%;
+    width: 100%;
+}
 .grid {
     display: grid;
-    height: 100%;
-    /* you dont use pixels for width :sob: */
-    width: 700px; 
+    height: 700px;
+    width: 85%; 
     border-radius: 20px;
     background-color: var(--color7);
     margin: auto;
@@ -75,19 +85,50 @@
 }
 .circle {
     width: 100%; 
-    height: 100%;
-    border-radius: 50%; /* makes it a circle */
-    background-color: var(--color5); /* circle color */
+    height: 100%; 
+    /* makes it a circle */
+    border-radius: 50%;
+    /* circle color */
+    background-color: var(--color5);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s;
     border: none;
 }
-
 .circle.active {
     transform: scale(0.95); 
-    background-color: #DB3069;
+    background-color: var(--color2);
+}
+
+.countdown {
+    font-size: large;
+
+}
+
+/* leaderboard */
+.leaderboard {
+    display: grid;
+    height: 95%;
+    /* you dont use pixels for width :sob: */
+    width: 700px; 
+    border-radius: 20px;
+    background-color: var(--color6);
+    margin: auto;
+    justify-content: center;
+    /* grid-template-columns: repeat(4, auto); 5 columns */
+    gap: 10px; 
+    column-gap: 20px;
+    padding: 20px; /* padding between circles and edge */
+}
+/* leaderboard item */
+.leaderboarditem {
+    background-color: var(--color5);
+    font-size: medium;
+    font: Arial;
+    border-radius: 15px;
+    height: 100%;
+    color: var(--color3);
 }
 .container{
     display: flex;
@@ -127,29 +168,12 @@
     border-radius: 5px;
     padding-right: 5px;
 }
-.leaderboarditem {
-    background-color: var(--color5);
-    font-size: medium;
-    font: Arial;
-    border-radius: 15px;
-    height: 50%;
-    color: var(--color3);
-}
-.leaderboard {
-    color: wheat;
-    display: grid;
-    height: 95%;
-    /* you dont use pixels for width :sob: */
-    width: 700px; 
-    border-radius: 20px;
-    background-color: var(--color6);
+/* leaderboard header */
+.header-div {
     margin: auto;
-    justify-content: center;
-    /* grid-template-columns: repeat(4, auto); 5 columns */
-    gap: 10px; 
-    column-gap: 20px;
-    padding: 20px; /* padding between circles and edge */
+    text-align: center;
 }
+/* settings */
 .settings {
     color: var(--color3);
     display: grid;
@@ -164,11 +188,4 @@
     gap: 10px; 
     column-gap: 20px;
     padding: 20px; /* padding between circles and edge */
-}
-.popper-grid {
-    height: 95%;
-}
-.header-div {
-    margin: auto;
-    text-align: center;
 }

@@ -92,7 +92,7 @@
             {/each}
         </div>
     {:else}
-        <div class="321">
+        <div class="countdown">
             <p>{counter}</p>
         </div> 
     {/if}
