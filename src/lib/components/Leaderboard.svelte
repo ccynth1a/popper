@@ -11,11 +11,6 @@
         fetchScores().then(fetchedScores => {
             scores = fetchedScores;          
         });
-        let usernamefield = document.getElementById("username-field") as HTMLInputElement;
-        usernamefield!.addEventListener("input", () => {
-            console.log("Input Detected")
-            username = usernamefield!.value!;
-        });
 
         // Update Leaderboard Periodically
         setInterval(() => fetchScores().then(fetchedScores => {

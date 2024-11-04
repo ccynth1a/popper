@@ -7,6 +7,9 @@
 
     let { username }: {username: string} = $props()
 
+    let inGame: boolean = $state(false);
+    let counter = $state(3);
+
     // Button defined in ../types.ts
     let buttons: Button[] = $state([]);
 
@@ -60,23 +63,39 @@
             elapsed = end - start;
             updateScores(username, elapsed);
         }
+        inGame = false;
         buttons.forEach(button => button.active = false);
         generateRandomCircles()
+        counter = 3;
+        // Omnissiah forgive me for this technological heresy
+        sleep(1000).then(() => {counter--; sleep(1000).then(() => {counter--; sleep(1000).then(() => {counter--; inGame = true})})});
+        start = Date.now();
+    }
+
+    const sleep = function(ms: number) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
 
     onMount(() => {
-        start = Date.now()
         createButtons();
-        generateRandomCircles()
+        generateRandomCircles();
+        sleep(1000).then(() => {counter--; sleep(1000).then(() => {counter--; sleep(1000).then(() => {counter--; inGame = true})})});
+        start = Date.now()
     })
 </script>
 
 <main class="theme-default popper-grid">
-    <div class=grid>
-        {#each buttons as button}
-            <input type="button" class="circle {button.active ? "active" : ""}" onclick={() => handleClick(button.id)} />
-        {/each}
-    </div>
+    {#if inGame}
+        <div class=grid>
+            {#each buttons as button}
+                <input type="button" class="circle {button.active ? "active" : ""}" onclick={() => handleClick(button.id)} />
+            {/each}
+        </div>
+    {:else}
+        <div class="321">
+            <p>{counter}</p>
+        </div> 
+    {/if}
 </main>
 
 <style>
