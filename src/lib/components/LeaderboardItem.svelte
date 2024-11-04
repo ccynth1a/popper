@@ -30,7 +30,7 @@
 
 <style>
     main {
-        background-color: var(--color1);
+        background-color: var(--color5);
         font-size: medium;
         font: Arial;
         border-radius: 15px;
@@ -61,7 +61,7 @@
         margin-left: 5px;
         padding-left: 5px;
         padding-right: 5px;
-        background-color: var(--color3);
+        background-color: var(--color2);
         border-radius: 5px;
         padding-left: 5px;
         text-align: left;
@@ -70,7 +70,7 @@
         margin-left: 5px;
         padding-left: 5px;
         padding-right: 5px;
-        background-color: var(--color1);
+        background-color: var(--color2);
         border-radius: 5px;
         padding-right: 5px;
     }

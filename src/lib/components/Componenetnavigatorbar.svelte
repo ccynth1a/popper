@@ -91,7 +91,7 @@
         border-bottom: 5px;
     }
     .navbutton{
-        color: wheat;
+        color: var(--color3);
         background-color: var(--color6);
         /* border: none; */
         border-color: wheat;

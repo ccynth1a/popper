@@ -9,16 +9,6 @@
 </main>
 
 <style>
-    .theme-default {
-        --color1: #1446A0;
-        --color2: #DB3069;
-        --color3: #F5D547;
-        --color4: #EBEBD3;
-        --color5: #3C3C3B;
-        --color6: #2c2c2c;
-        --color7: #141414;
-    }
-
     main {
         color: wheat;
         display: grid;
