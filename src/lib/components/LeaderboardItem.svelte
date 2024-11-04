@@ -35,6 +35,7 @@
         font: Arial;
         border-radius: 15px;
         height: 50%;
+        color: var(--color3);
     }
     .container{
         display: flex;

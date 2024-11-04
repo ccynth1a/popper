@@ -114,8 +114,12 @@
         margin-bottom: 20px;
         height: 700px;
     }
-    
-    .active {
-        background-color: red;
+    .active{
+        color: wheat;
+        background-color: var(--color5);
+        border-color: white;
+        height: 33px;
+        width: 25%;
+        border-radius: 15px 15px 0px 0px;
     }
 </style>

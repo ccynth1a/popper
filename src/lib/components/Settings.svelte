@@ -10,7 +10,7 @@
 
 <style>
     main {
-        color: wheat;
+        color: var(--color3);
         display: grid;
         height: 95%;
         /* you dont use pixels for width :sob: */
