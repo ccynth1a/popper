@@ -38,8 +38,8 @@
                 userNameEntered = true;
             }
         })
-        // username = "no"
-        // userNameEntered = true;
+        username = "no"
+        userNameEntered = true;
     });
 
 </script>
