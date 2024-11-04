@@ -8,6 +8,7 @@
     --color6: #2c2c2c;
     --color7: #141414;
 }
+
 /* default stuffs */
 .popper-main-style {
     color: var(--color3);
@@ -24,22 +25,26 @@
     padding-bottom: 10px;
     height: 100%;
 }
+
 .username-entry {
     display: grid;
     height: 700px;
-    width: 85%; 
+    width: 85%;
     border-radius: 20px;
     background-color: var(--color6);
     margin: auto;
     justify-content: center;
-    padding: 20px; /* padding between circles and edge */
+    padding: 20px;
+    /* padding between circles and edge */
     font-size: 50px;
 }
+
 .usernameprompt {
     margin: auto;
     margin-bottom: 0;
     font-size: large;
 }
+
 #username-entry-field {
     height: 56px;
     max-width: 50%;
@@ -52,6 +57,7 @@
     border: none;
     text-align: center;
 }
+
 .nav {
     background-color: var(--color1);
     border-radius: 1%;
@@ -63,7 +69,8 @@
     /* border-color: white; */
     border-bottom: 5px;
 }
-.navbutton{
+
+.navbutton {
     color: var(--color3);
     background-color: var(--color6);
     /* border: none; */
@@ -74,20 +81,23 @@
     width: 25%;
     border-radius: 15px 15px 0px 0px;
 }
-.navbutton:hover{
+
+.navbutton:hover {
     background-color: var(--color5);
     height: 33px;
     width: 25%;
     border-radius: 15px 15px 0px 0px;
 }
-.container{
+
+.container {
     /* centre the grid and anything else inside this container */
-    justify-content: center; 
+    justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
     /* height: 700px; */
 }
-.active{
+
+.active {
     background-color: var(--color5);
     height: 33px;
     width: 25%;
@@ -96,36 +106,47 @@
 
 
 /* Popper - grid svelte */
-.countdown  {
+.countdown {
     display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    width: 85%;
     height: 700px;
-    width: 85%; 
     border-radius: 20px;
     background-color: var(--color6);
     margin: auto;
+    /* font-size: 50px; */
     justify-content: center;
-    padding: 20px; /* padding between circles and edge */
+}
+#counter{
     font-size: 50px;
-    justify-content: center;
+    size: 1000px;
 }
-.counter {
-    margin-top: 500%;
+#motr {
+    font-size: larger;
 }
+#elapsed {
+    font-size: large;
+}
+
 .popper-grid {
     height: auto;
     width: auto;
 }
+
 .grid {
     display: grid;
     height: 700px;
-    width: 85%; 
+    width: 85%;
     border-radius: 20px;
     background-color: var(--color7);
     margin: auto;
     grid-template-columns: auto auto auto auto;
-    gap: 10px 5%; 
-    padding: 20px; /* padding between circles and edge */
+    gap: 10px 5%;
+    padding: 20px;
+    /* padding between circles and edge */
 }
+
 .circle {
     height: auto;
     width: auto;
@@ -136,8 +157,9 @@
     transition: background-color 0.3s;
     border: none;
 }
+
 .circle.active {
-    transform: scale(0.95); 
+    transform: scale(0.95);
     background-color: var(--color4);
 }
 
@@ -147,16 +169,18 @@
     display: grid;
     height: 700px;
     max-height: 700px;
-    width: 85%; 
+    width: 85%;
     border-radius: 15px;
     background-color: var(--color6);
     margin: auto;
     justify-content: center;
     /* grid-template-columns: repeat(4, auto); 5 columns */
-    gap: 10px; 
+    gap: 10px;
     column-gap: 20px;
-    padding: 20px; /* padding between circles and edge */
+    padding: 20px;
+    /* padding between circles and edge */
 }
+
 .leaderboarditem {
     background-color: var(--color5);
     font-size: medium;
@@ -166,20 +190,24 @@
     font-size: larger;
     width: 100%;
 }
-.leaderboard-container{
+
+.leaderboard-container {
     display: flex;
 }
-#container-left{
+
+#container-left {
     width: 89%;
     display: flex;
     justify-content: left;
 }
-#container-right{
+
+#container-right {
     width: 10%;
     display: flex;
     justify-content: right;
 }
-#position{
+
+#position {
     padding-left: 5px;
     padding-right: 5px;
     background-color: var(--color2);
@@ -188,7 +216,8 @@
     text-align: center;
     justify-content: center;
 }
-#username{
+
+#username {
     margin-left: 5px;
     padding-left: 5px;
     padding-right: 5px;
@@ -198,7 +227,8 @@
     padding-left: 5px;
     text-align: left;
 }
-#score{
+
+#score {
     margin-left: 5px;
     padding-left: 5px;
     padding-right: 5px;
@@ -207,6 +237,7 @@
     border-radius: 5px;
     padding-right: 5px;
 }
+
 /* leaderboard header */
 .header-div {
     margin: auto;
@@ -219,13 +250,14 @@
     color: var(--color3);
     display: grid;
     height: 700px;
-    width: 85%; 
+    width: 85%;
     border-radius: 20px;
     background-color: var(--color6);
     margin: auto;
     justify-content: center;
     /* grid-template-columns: repeat(4, auto); 5 columns */
-    gap: 10px; 
+    gap: 10px;
     column-gap: 20px;
-    padding: 20px; /* padding between circles and edge */
+    padding: 20px;
+    /* padding between circles and edge */
 }
