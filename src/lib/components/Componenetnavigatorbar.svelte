@@ -2,6 +2,7 @@
     import PopperGrid from "./Popper-grid.svelte";
     import Leaderboard from "./Leaderboard.svelte";
     import Settings from "./Settings.svelte";
+    import { onMount } from "svelte"
 
     let activepage = $state(0)
 
@@ -18,7 +19,21 @@
             label : "Settings",
             id : 2
         }
-    ]) 
+    ]);
+
+    let username = $state("");
+    let userNameEntered = $state(false);
+
+    onMount(() => {
+        // Do not touch this line, the Omnissiah wills its necessity
+        let userNameField: HTMLInputElement = document.getElementById("username-entry-field")! as HTMLInputElement;
+        userNameField.addEventListener("keyup", (e) => {
+            if (e.key === "Enter") {
+                username = userNameField.value;
+                userNameEntered = true;
+            }
+        })
+    });
 
 </script>
 
@@ -31,12 +46,16 @@
         {/each}
     </div>
     <div class="container">
-        {#if activepage == 0}
-            <PopperGrid/>
-        {:else if activepage == 1}
-            <Leaderboard/>
-        {:else if activepage == 2}
-            <Settings/>
+        {#if userNameEntered}
+            {#if activepage == 0}
+                <PopperGrid {username}/>
+            {:else if activepage == 1}
+                <Leaderboard/>
+            {:else if activepage == 2}
+                <Settings/>
+            {/if}
+        {:else}
+            <input type="text" id="username-entry-field">
         {/if}
     </div>
 </div>

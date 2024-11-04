@@ -5,8 +5,7 @@
     import type { Button } from "../types";
     import { onMount } from "svelte"
 
-    let userNameEntered: boolean = $state(false);
-    let username: string;
+    let { username }: {username: string} = $props()
 
     // Button defined in ../types.ts
     let buttons: Button[] = $state([]);
@@ -66,16 +65,6 @@
     }
 
     onMount(() => {
-        // Do not touch this line, the Omnissiah wills its necessity
-        let userNameField: HTMLInputElement = document.getElementById("username-entry-field")! as HTMLInputElement;
-        userNameField.addEventListener("keyup", (e) => {
-            if (e.key === "Enter") {
-                username = userNameField.value;
-                userNameEntered = true;
-            }
-        })
-        username = "crime-girl" // REMOVE THIS LINE
-        userNameEntered = true; // REMOVE THIS LINE
         start = Date.now()
         createButtons();
         generateRandomCircles()
@@ -84,13 +73,9 @@
 
 <main>
 <div class=grid>
-    {#if !userNameEntered}
-        <input type="text" id="username-entry-field" />
-    {:else}
-        {#each buttons as button}
-            <input type="button" class="circle {button.active ? "active" : ""}" onclick={() => handleClick(button.id)} />
-        {/each}
-    {/if}
+    {#each buttons as button}
+        <input type="button" class="circle {button.active ? "active" : ""}" onclick={() => handleClick(button.id)} />
+    {/each}
 </div>
 </main>
 
