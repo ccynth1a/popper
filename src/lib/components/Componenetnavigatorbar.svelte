@@ -37,28 +37,30 @@
 
 </script>
 
-<div class="componentloader theme-default">
-    <div class="nav">
-        {#each activetab as tab (tab.id) }
-            <button class = "navbutton" onclick={ () => {activepage = tab.id}}>
-                {tab.label}
-            </button>            
-        {/each}
-    </div>
-    <div class="container">
-        {#if userNameEntered}
-            {#if activepage == 0}
-                <PopperGrid {username}/>
-            {:else if activepage == 1}
-                <Leaderboard/>
-            {:else if activepage == 2}
-                <Settings/>
+<main class="theme-default">
+    <div class="componentloader">
+        <div class="nav">
+            {#each activetab as tab (tab.id) }
+                <button class = "navbutton" onclick={ () => {activepage = tab.id}}>
+                    {tab.label}
+                </button>            
+            {/each}
+        </div>
+        <div class="container">
+            {#if userNameEntered}
+                {#if activepage == 0}
+                    <PopperGrid {username}/>
+                {:else if activepage == 1}
+                    <Leaderboard/>
+                {:else if activepage == 2}
+                    <Settings/>
+                {/if}
+            {:else}
+                <input type="text" id="username-entry-field">
             {/if}
-        {:else}
-            <input type="text" id="username-entry-field">
-        {/if}
+        </div>
     </div>
-</div>
+</main>
 
 <style>
     .theme-default {
