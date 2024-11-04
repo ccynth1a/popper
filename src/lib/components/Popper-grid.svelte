@@ -2,10 +2,11 @@
 
 <script lang="ts">
     import { updateScores } from "$lib/leaderboard";
-    import type { Button } from "../types";
+    import type { Button, Settings_t } from "../types";
     import { onMount } from "svelte"
 
-    let { username }: {username: string} = $props()
+
+    let { username, settings }: {username: string, settings: Settings_t} = $props()
 
     let inGame: boolean = $state(false);
     let counter = $state(3);
@@ -85,7 +86,7 @@
 </script>
 
 <main class="theme-default popper-grid">
-    {#if inGame}
+    {#if inGame || settings.countdown == false}
         <div class=grid>
             {#each buttons as button}
                 <input type="button" class="circle {button.active ? "active" : ""}" onclick={() => handleClick(button.id)} />

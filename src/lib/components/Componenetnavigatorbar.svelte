@@ -2,6 +2,7 @@
     import PopperGrid from "./Popper-grid.svelte";
     import Leaderboard from "./Leaderboard.svelte";
     import Settings from "./Settings.svelte";
+    import type { Settings_t } from "../types"
     import { onMount } from "svelte"
 
     let activepage = $state(0)
@@ -20,6 +21,10 @@
             id : 2
         }
     ]);
+
+    let settings: Settings_t =  $state({
+        countdown: true
+    })
 
     let username = $state("");
     let userNameEntered = $state(false);
@@ -51,7 +56,7 @@
         <div class="container">
             {#if userNameEntered}
                 {#if activepage == 0}
-                    <PopperGrid {username}/>
+                    <PopperGrid {username} {settings}/>
                 {:else if activepage == 1}
                     <Leaderboard/>
                 {:else if activepage == 2}
