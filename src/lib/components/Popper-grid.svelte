@@ -5,7 +5,7 @@
     import type { Button, Settings_t } from "../types";
     import { onMount } from "svelte"
 
-    let msg: String[] = [
+    let msgs: String[] = [
         "Anvil.",
         "My Grandmother can click faster than your Grandmother.",
         "Paypal Phoebe $30,000 USD",
@@ -15,6 +15,7 @@
         //"Death to Israel",
         //"Death to America",
     ];
+    let msg: String = $state("");
 
     let { username, settings }: {username: string, settings: Settings_t} = $props()
 
@@ -74,6 +75,7 @@
             elapsed = end - start;
             updateScores(username, elapsed);
         }
+        msg = msgs[Math.floor(Math.random() * msgs.length)];
         inGame = false;
         buttons.forEach(button => button.active = false);
         generateRandomCircles()
