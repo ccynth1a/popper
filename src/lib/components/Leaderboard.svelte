@@ -24,7 +24,7 @@
     });     
 </script>
 
-<main>
+<main class="theme-default">
     <LeaderboardHeader />
     <!-- <input id="username-field" type="text"> -->
     {#each scores as score, position}
@@ -40,8 +40,7 @@
         width: 100%;
         height: auto;
     }*/
-
-
+    
     main {
         color: wheat;
         display: grid;
@@ -49,7 +48,7 @@
         /* you dont use pixels for width :sob: */
         width: 700px; 
         border-radius: 20px;
-        background-color: #5A639C;
+        background-color: var(--color6);
         margin: auto;
         justify-content: center;
         /* grid-template-columns: repeat(4, auto); 5 columns */
