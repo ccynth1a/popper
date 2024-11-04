@@ -11,7 +11,7 @@
 </script>
 <!-- style="background-color: {color}" -->
 <main class="theme-default leaderboarditem">
-    <div class="container" >
+    <div class="leaderboard-container" >
         <div id="container-left">
             <div id="position">
                 {position+1}

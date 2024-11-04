@@ -87,7 +87,7 @@
 
 <main class="theme-default popper-grid">
     {#if inGame || settings.countdown == false}
-        <div class=grid>
+        <div class="grid">
             {#each buttons as button}
                 <input type="button" class="circle {button.active ? "active" : ""}" onclick={() => handleClick(button.id)} />
             {/each}

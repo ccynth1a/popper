@@ -64,6 +64,7 @@
                 {/if}
             {:else}
                 <div class="username-entry">
+                    <p class="usernameprompt">Enter a username...</p>
                     <input type="text" id="username-entry-field">
                 </div>
             {/if}

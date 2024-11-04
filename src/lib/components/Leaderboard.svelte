@@ -27,13 +27,5 @@
     {/each}
 </main>
 
-
 <style>
-    /*main {
-        background-color: rgb(20,20,20);
-        border-radius: 32px;
-        width: 100%;
-        height: auto;
-    }*/
-
 </style>
