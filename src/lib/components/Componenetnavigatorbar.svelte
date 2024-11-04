@@ -41,7 +41,7 @@
     <div class="componentloader">
         <div class="nav">
             {#each activetab as tab (tab.id) }
-                <button class = "navbutton" onclick={ () => {activepage = tab.id}}>
+                <button class = "navbutton {activepage == tab.id ? "active" : ""} " onclick={ () => {activepage = tab.id}}>
                     {tab.label}
                 </button>            
             {/each}
@@ -113,5 +113,9 @@
         margin-top: 20px;
         margin-bottom: 20px;
         height: 700px;
+    }
+    
+    .active {
+        background-color: red;
     }
 </style>
