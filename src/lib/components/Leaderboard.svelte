@@ -45,7 +45,7 @@
     main {
         color: wheat;
         display: grid;
-        height: 700px;
+        height: 95%;
         /* you dont use pixels for width :sob: */
         width: 700px; 
         border-radius: 20px;

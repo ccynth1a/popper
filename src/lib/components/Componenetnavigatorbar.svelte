@@ -67,6 +67,8 @@
         --color3: #F5D547;
         --color4: #EBEBD3;
         --color5: #3C3C3B;
+        --color6: #2c2c2c;
+        --color7: #141414;
     }
     .componentloader {
         background-color: var(--color5);
@@ -88,7 +90,7 @@
     }
     .navbutton{
         color: wheat;
-        background-color: var(--color5);
+        background-color: var(--color6);
         /* border: none; */
         border-color: wheat;
         border-style: solid;
@@ -108,6 +110,6 @@
     .container{
         margin-top: 20px;
         margin-bottom: 20px;
-        height: 100%;
+        height: 700px;
     }
 </style>
