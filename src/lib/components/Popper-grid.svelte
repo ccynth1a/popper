@@ -94,7 +94,7 @@
         </div>
     {:else}
         <div class="countdown">
-            <p>{counter}</p>
+            <h1 class="counter">{counter}</h1>
         </div> 
     {/if}
 </main>

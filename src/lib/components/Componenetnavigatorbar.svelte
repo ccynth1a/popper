@@ -38,8 +38,8 @@
                 userNameEntered = true;
             }
         })
-        username = "no"
-        userNameEntered = true;
+        // username = "no"
+        // userNameEntered = true;
     });
 
 </script>
@@ -63,7 +63,9 @@
                     <Settings/>
                 {/if}
             {:else}
-                <input type="text" id="username-entry-field">
+                <div class="username-entry">
+                    <input type="text" id="username-entry-field">
+                </div>
             {/if}
         </div>
     </div>

@@ -10,10 +10,11 @@
 }
 /* default stuffs */
 .popper-main-style {
-/* main { */
     color: var(--color3);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     /* background-color: var(--color5); */
 }
+
 /* Componenet Navigator Bar */
 .componentloader {
     background-color: var(--color5);
@@ -22,7 +23,30 @@
     padding-bottom: 10px;
     height: 100%;
 }
-.nav{
+.username-entry {
+    display: grid;
+    height: 700px;
+    width: 85%; 
+    border-radius: 20px;
+    background-color: var(--color6);
+    margin: auto;
+    justify-content: center;
+    padding: 20px; /* padding between circles and edge */
+    font-size: 50px;
+    justify-content: center;
+}
+#username-entry-field {
+    height: 56px;
+    max-width: 50%;
+    margin: auto;
+    border-radius: 15px 15px 15px 15px;
+    background-color: var(--color5);
+    color: var(--color3);
+    font-size: larger;
+    border: none;
+    padding-left: 5%;
+}
+.nav {
     background-color: var(--color1);
     border-radius: 1%;
     height: fit-content;
@@ -69,6 +93,21 @@
     height: 100%;
     width: 100%;
 }
+.countdown  {
+    display: grid;
+    height: 700px;
+    width: 85%; 
+    border-radius: 20px;
+    background-color: var(--color7);
+    margin: auto;
+    justify-content: center;
+    padding: 20px; /* padding between circles and edge */
+    font-size: 50px;
+    justify-content: center;
+}
+.counter {
+    margin-top: 500%;
+}
 .grid {
     display: grid;
     height: 700px;
@@ -99,11 +138,6 @@
 .circle.active {
     transform: scale(0.95); 
     background-color: var(--color2);
-}
-
-.countdown {
-    font-size: large;
-
 }
 
 /* leaderboard */
