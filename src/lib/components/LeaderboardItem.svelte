@@ -3,6 +3,11 @@
     export let score;
     // let colors: string[] = ["red", "green", "blue", "yellow"];
     // let color = colors[position%5];
+    const formatTime = (milliseconds: number) => {
+        const seconds = (milliseconds / 1000).toFixed(3);
+
+        return seconds.toString().padStart(2, "0")
+    };
 </script>
 <!-- style="background-color: {color}" -->
 <main class="theme-default">
@@ -17,7 +22,7 @@
         </div>
         <div id="container-right">
             <div id="score">
-                {score.score}
+                {formatTime(score.score)}
             </div>
         </div>
     </div> 
