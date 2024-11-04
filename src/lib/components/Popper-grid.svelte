@@ -5,6 +5,16 @@
     import type { Button, Settings_t } from "../types";
     import { onMount } from "svelte"
 
+    let msg: String[] = [
+        "Anvil.",
+        "My Grandmother can click faster than your Grandmother.",
+        "Paypal Phoebe $30,000 USD",
+        "I boppy say something",
+        "Bad apple like the toehow?",
+        "I boppy score something",
+        //"Death to Israel",
+        //"Death to America",
+    ];
 
     let { username, settings }: {username: string, settings: Settings_t} = $props()
 
@@ -16,7 +26,7 @@
 
     let start = Date.now();
     let end: number;
-    let elapsed: number;
+    let elapsed: number = $state(0);
    
     // Fill all buttons with false
     const createButtons = function() {
@@ -76,6 +86,11 @@
     const sleep = function(ms: number) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
+    
+    const formatTime = (milliseconds: number) => {
+        const seconds = (milliseconds / 1000).toFixed(3);
+        return seconds.toString().padStart(2, "0")
+    };
 
     onMount(() => {
         createButtons();
@@ -95,6 +110,8 @@
     {:else}
         <div class="countdown">
             <h1 class="counter">{counter}</h1>
+            <p class="counter">{msg}</p>
+            <p class="counter">{formatTime(elapsed)}</p>
         </div> 
     {/if}
 </main>
