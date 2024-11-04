@@ -71,7 +71,7 @@
     })
 </script>
 
-<main class="theme-default">
+<main class="theme-default popper-grid">
     <div class=grid>
         {#each buttons as button}
             <input type="button" class="circle {button.active ? "active" : ""}" onclick={() => handleClick(button.id)} />
@@ -80,39 +80,4 @@
 </main>
 
 <style>
-    main {
-        height: 95%;
-    }
-
-    .grid {
-        display: grid;
-        height: 100%;
-        /* you dont use pixels for width :sob: */
-        width: 700px; 
-        border-radius: 20px;
-        background-color: var(--color7);
-        margin: auto;
-        justify-content: center;
-        grid-template-columns: repeat(4, 18%); /* 5 columns */
-        gap: 10px; 
-        overflow: auto;
-        column-gap: 20px;
-        padding: 20px; /* padding between circles and edge */
-    }
-    .circle {
-        width: 100%; 
-        height: 100%;
-        border-radius: 50%; /* makes it a circle */
-        background-color: var(--color5); /* circle color */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background-color 0.3s;
-        border: none;
-    }
-
-    .circle.active {
-        transform: scale(0.95); 
-        background-color: #DB3069;
-    }
 </style>

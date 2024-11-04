@@ -5,9 +5,5 @@
 </main>
     
 <style>
-    .header-div {
-        margin: auto;
-        text-align: center;
-    }
 </style>
     
