@@ -7,7 +7,7 @@ Have you ever wanted to click circles for at least 7 hours? If yes, or no, then 
 ## Build Instructions
 So far, there are no other dependencies than the usual Sveltekit ones, so simply build in the way you would normally expect to.
 ## Pull Requests
-As of writing, this repository is private, but I ask the common courtesy that you please do not make pull requests as this is a personal project
+Please do not make pull requests, they will not be merged, as this repository is for our learning experience
 
 
 
