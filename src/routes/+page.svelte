@@ -3,5 +3,15 @@
 </script>
 
 <main>
-    <Componenetnavigatorbar />
+    <div class="center">
+        <Componenetnavigatorbar />
+    </div>
 </main>
+
+<style>
+    .center {
+        display: block;
+        margin: auto;
+        width: 50%;
+    }
+</style>

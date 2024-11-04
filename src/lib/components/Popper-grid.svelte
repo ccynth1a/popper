@@ -4,7 +4,8 @@
     import { updateScores } from "$lib/leaderboard";
     import type { Button, Settings_t } from "../types";
     import { onMount } from "svelte"
-
+    
+    let { username, settings }: {username: string, settings: Settings_t} = $props()
     let msgs: String[] = [
         "Anvil.",
         "My Grandmother can click faster than your Grandmother.",
@@ -12,12 +13,66 @@
         "I boppy say something",
         "Bad apple like the toehow?",
         "I boppy score something",
-        //"Death to Israel",
-        //"Death to America",
+        "Death to Israel",
+        "Death to America",
+        "Straight poppin it, and by 'it', well lets just say my popper...",
+        "cheese and jam sammich",
+        "I use arch btw",
+        "My OS is ARCH-based actually 🤓",
+        "Why did the apple employee get ejected when they suggested adding windows to the office?",
+        "Stay away from the black mould",
+        "Also try Minceraft!",
+        "Also try Minecraft!",
+        "Also try Terraria!",
+        "I'll have you know my feet are 10 on wikifeet.",
+        "Why didn't the chicken cross the road? Because an anvil fell into the middle of the road.",
+        "Checkout my website at 'http://localhost:5173/' guys !!!!",
+        "ARM > X86",
+        "My apollocheese",
+        "I'll krill you...",
+        "you wont resprawn...",
+        "you shrimplteon.",
+        "I'll krill you. you wont resprawn. you shrimplteon.",
+        "Slava Ukraine",
+        "Visit https://bdsmovement.net/get-involved/what-to-boycott",
+        "Trans rights!",
+        "I love you aro/ace people!!",
+        "Woke popper",
+        "Taiwan is a country.",
+        "I love all queers",
+        "Also try linux",
+        "*NIX > Windows",
+        "If you aren't someone the church would've killed 400 years ago, are you even living?",
+        "Madoka's Rap (minor spoilers)",
+        "It was 16:19 when I wrote this.",
+        "I probably need some ritalin",
+        "I love my wife",
+        "I like my wife",
+        "My wife is okay",
+        "My wife is a demon spawned from hell",
+        "Drink some water",
+        "Drink some more water",
+        "Have you eaten today?",
+        "Eat something today",
+        "You are valid no matter what!",
+        "I had a blister on my left foot's middle toe recently",
+        "I love my robot wife",
+        "I can smell",
+        "My wife is very pretty",
+        "Error 404: message not found",
+        "Error 403: this message is a seceret from you :p",
+        "This is ".concat(username, " from the future. Invest in fried shrimp"),
+        "Be gay, do crime",
+        "Hatsune Miku",
+        "It's shrimple really... 🦐",
+        "Hiiiiiiiiiiiiiiiii",
+        "That time i reincarnated as message on a popper game made by two devs!",
+        "Post that thang! 📐",
+        "I boppy cry"
     ];
+
     let msg: String = $state("");
 
-    let { username, settings }: {username: string, settings: Settings_t} = $props()
 
     let inGame: boolean = $state(false);
     let first: boolean = $state(true);
@@ -114,7 +169,7 @@
     {:else}
         <div class="countdown">
             <h1 id="counter">{counter}</h1>
-            <p id="motr">{first ? "Welcome To Popper" : msg}</p>
+            <p id="popper-message">{first ? "Welcome To Popper" : msg}</p>
             <p id="elapsed">{first ? "" : formatTime(elapsed)}</p>
         </div> 
     {/if}
