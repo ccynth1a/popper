@@ -45,7 +45,15 @@ let scores: ScoreListing[] = [
 
 const sortScores = function() {
     return scores.sort((a,b) => a.score - b.score).slice(0,9);
-    
+}
+
+const findUsernameIndex = function(user: string) {
+    for (let i = 0; i < scores.length; i++) {
+        if (scores[i].username == user) {
+            return i;
+        }
+    }
+    return null;
 }
 
 export async function GET() {
@@ -55,7 +63,17 @@ export async function GET() {
 export async function POST(event) {
     const { user, score } = await event.request.json()
 
-    scores.push({username: user, score: score});
+    if(scores.some((element) => {
+        return element.username == user;
+    })) {
+        let current: number = findUsernameIndex(user)!;
+        if (scores[current].score > score) {
+            scores[current].score = score;
+        } 
+    } else {
+        scores.push({username: user, score: score});
+    }
+    console.log(scores)
 
     return json(sortScores())
 }
